@@ -6,10 +6,9 @@ var x = c.offsetX;
 var y = c.offsetY;
 
 var toggled = document.getElementById("toggle");
-var cleared = document.getElementById("clear");
-var lined =  document.getElementById("line");
+var stopped = document.getElementById("stop");
 
-var clearer = function(e){
+var stopper = function(e){
     e.preventDefault();
     ctx.closePath();
     ctx.beginPath();
@@ -64,8 +63,7 @@ var draw = function(e){
 
 c.addEventListener("click", draw);
 toggled.addEventListener("click", toggler);
-cleared.addEventListener("click", clearer);
-//lined.addEventListener("click", liner);
+stopped.addEventListener("click", clearer);
 
 /*
 fillStyle()
