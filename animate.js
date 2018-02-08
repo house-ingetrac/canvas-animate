@@ -4,6 +4,8 @@ var toggle = false;
 var line = false;
 var x = c.offsetX;
 var y = c.offsetY;
+var xdir = 1;
+var ydir = 1;
 
 var toggled = document.getElementById("toggle");
 var stopped = document.getElementById("stop");
