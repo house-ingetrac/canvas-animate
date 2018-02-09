@@ -2,8 +2,8 @@ var c = document.getElementById("slate");
 var ctx = c.getContext("2d");
 
 var toggle = false;
-var x = c.offsetX;
-var y = c.offsetY;
+var x = 300;
+var y = 300;
 var xdir = 1;
 var ydir = 1;
 var id = 0;
@@ -37,8 +37,8 @@ var bounce = function(e){
     if(y<=0){
 	ydir = -1*ydir;
     }
-    x += xdir;
-    y += ydir;
+    x += 3 * xdir;
+    y += 3 *  ydir;
     
     draw();
     
@@ -46,7 +46,7 @@ var bounce = function(e){
     
 }
 
-var draw = function(e){
+var draw = function(){
 	ctx.clearRect(0, 0, 600, 600);
 	ctx.beginPath();
 	ctx.arc(x, y, 10, 0, 2*Math.PI);
