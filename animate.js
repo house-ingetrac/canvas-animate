@@ -1,8 +1,13 @@
 var c = document.getElementById("slate");
 var ctx = c.getContext("2d");
 
+var logo = new Image();
+logo.src = "/logo.jpg";
+//logo.height = 20;
+//logo.width = 40;
+
 var toggle = false;
-var x = 300;
+var x = 150;
 var y = 300;
 var xdir = 1;
 var ydir = 1;
@@ -25,6 +30,7 @@ var toggler = function(e){
 }
 
 var bounce = function(e){
+    //window.cancelAnimationFrame(id);
     if(x>=600){
 	xdir = -1*xdir;
     }
@@ -40,7 +46,8 @@ var bounce = function(e){
     x += 3 * xdir;
     y += 3 *  ydir;
     
-    draw();
+    //display image;
+    ctx.drawImage(logo, x, y, 40, 20);
     
     id =  window.requestAnimationFrame(bounce);
     
@@ -57,6 +64,6 @@ var stop = function(){
     window.cancelAnimationFrame(id);
 }
 
-c.addEventListener("click", bounce);
-toggled.addEventListener("click", toggler);
+//c.addEventListener("click", grower);
+toggled.addEventListener("click", bounce);
 stopped.addEventListener("click", stopper);
